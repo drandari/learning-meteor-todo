@@ -45,7 +45,7 @@ class App extends Component {
             filteredTasks = filteredTasks.filter(task => !task.checked);
         }
         
-        return filteredTasks.map((task) => (
+        return filteredTasks.map((task) => {
             const currentUserId = this.props.currentUser && this.props.currentUser._id;
             const showPrivateButton = task.owner === currentUserId;
 
@@ -56,8 +56,7 @@ class App extends Component {
                 showPrivateButton={showPrivateButton}
               />
             );
-
-        ));
+        });
     }
 
     render(){        
